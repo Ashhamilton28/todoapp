@@ -21,11 +21,12 @@ res.status(400).send(error.message)
 //*create todo
 const createTodo= async (req, res)=>{
     //Todos is the todo from models
+    console.log(req.body)
     const todos = req.body
     try{
 
 const newTodo = await Todos.create(todos)
-
+console.log(newTodo)
 res.status(201).send(newTodo)
     }catch(error){
 res.status(500).send(error.message)
